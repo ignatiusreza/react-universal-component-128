@@ -17,6 +17,7 @@ const externals =
 
 config = _.merge({}, config, {
   name: 'server',
+  node: { __dirname: false },
   entry: path.join(__dirname, 'src', 'entries', 'server.jsx'),
   output: {
     path: path.join(__dirname, 'build', 'server'),
