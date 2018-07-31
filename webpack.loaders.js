@@ -31,6 +31,7 @@ const jsxLoader = ({ context }) => {
       presets: [['env', { modules: false }], 'react'],
       plugins: [
         ['react-css-modules', { context, generateScopedName: cssClassName }],
+        'react-hot-loader/babel',
         'transform-object-rest-spread',
       ],
     },
