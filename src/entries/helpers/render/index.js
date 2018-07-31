@@ -13,7 +13,7 @@ const renderer = Component => {
     </AppContainer>
   );
 
-  ReactDOM.render(root, targetElement);
+  ReactDOM.hydrate(root, targetElement);
 };
 
 export default callback => callback(renderer);

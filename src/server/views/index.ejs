@@ -8,15 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="msapplication-config" content="none"/>
 
-    <link rel="stylesheet" media="screen" href="<%= bundlePath('main', 'css') %>" async="async" />
+    <%- chunks.styles %>
   </head>
 
   <body>
     <div id="react-root"><%- html %></div>
 
-    <script src="<%= bundlePath('manifest') %>" defer="defer"></script>
-    <script src="<%= bundlePath('polyfill') %>" defer="defer"></script>
-    <script src="<%= bundlePath('vendor') %>" defer="defer"></script>
-    <script src="<%= bundlePath('main') %>" defer="defer"></script>
+    <%- chunks.cssHash %>
+    <%- chunks.js %>
   </body>
 </html>
