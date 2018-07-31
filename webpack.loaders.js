@@ -1,3 +1,27 @@
+const CSSExtractPlugin = require('extract-css-chunks-webpack-plugin');
+const cssClassName = '[hash:base64]';
+
+const cssLoader = ({ target, devTool, output = {} }) => {
+  const { path: outputPath, publicPath } = output;
+  const loader = {
+    test: /\.css$/,
+    use: [{ loader: 'postcss-loader' }],
+  };
+
+  const options = { modules: true, localIdentName: cssClassName };
+  if (process.env.NODE_ENV !== 'production' && devTool) {
+    options.sourceMap = true;
+  }
+
+  if (target === 'node') {
+    loader.use = [{ loader: 'css-loader/locals', options }, ...loader.use];
+  } else {
+    loader.use = [{ loader: CSSExtractPlugin.loader }, { loader: 'css-loader', options }, ...loader.use];
+  }
+
+  return loader;
+};
+
 const jsxLoader = ({ context }) => {
   return {
     test: /\.jsx?$/,
@@ -6,6 +30,7 @@ const jsxLoader = ({ context }) => {
     options: {
       presets: [['env', { modules: false }], 'react'],
       plugins: [
+        ['react-css-modules', { context, generateScopedName: cssClassName }],
         'transform-object-rest-spread',
       ],
     },
@@ -13,6 +38,6 @@ const jsxLoader = ({ context }) => {
 };
 
 module.exports = (config, extractCSS) => {
-  if (!config.module) config.module = { rules: [] };
+  config.module.rules.push(cssLoader(config));
   config.module.rules.push(jsxLoader(config));
 };
