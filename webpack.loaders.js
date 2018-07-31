@@ -45,6 +45,7 @@ const jsxLoader = ({ context }) => {
         'react-hot-loader/babel',
         'syntax-dynamic-import',
         'transform-object-rest-spread',
+        'universal-import',
       ],
     },
   };
