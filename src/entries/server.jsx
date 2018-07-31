@@ -16,12 +16,17 @@ export default ({ clientStats }) => async (req, res) => {
       <Route path="" component={Root} />
     </StaticRouter>
   );
-  const chunkNames = flushChunkNames();
-  const chunks = pick(flushChunks(clientStats, { chunkNames }), 'js', 'styles', 'cssHash');
 
-  res.render('index', {
-    ...helpers,
-    html,
-    chunks,
-  });
+  if (context.url) {
+    res.redirect(context.status || 302, context.url);
+  } else {
+    const chunkNames = flushChunkNames();
+    const chunks = pick(flushChunks(clientStats, { chunkNames }), 'js', 'styles', 'cssHash');
+
+    res.render('index', {
+      ...helpers,
+      html,
+      chunks,
+    });
+  }
 };
