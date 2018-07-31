@@ -16,12 +16,6 @@ module.exports = {
     ],
   },
 
-  module: {
-    rules: [
-      { test: /\.jpg$/, use: 'url-loader?limit=10000' },
-    ]
-  },
-
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {

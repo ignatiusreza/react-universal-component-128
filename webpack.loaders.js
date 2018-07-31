@@ -22,6 +22,17 @@ const cssLoader = ({ target, devTool, output = {} }) => {
   return loader;
 };
 
+const imgLoader = () => {
+  return {
+    test: /\.jpg$/,
+    loader: 'url-loader',
+    options: {
+      limit: 10000,
+      publicPath: '/assets',
+    },
+  };
+};
+
 const jsxLoader = ({ context }) => {
   return {
     test: /\.jsx?$/,
@@ -39,6 +50,9 @@ const jsxLoader = ({ context }) => {
 };
 
 module.exports = (config, extractCSS) => {
+  if (!config.module) config.module = { rules: [] };
+
   config.module.rules.push(cssLoader(config));
+  config.module.rules.push(imgLoader(config));
   config.module.rules.push(jsxLoader(config));
 };
