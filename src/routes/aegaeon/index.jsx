@@ -2,9 +2,11 @@ import React from 'react';
 
 import aegaeon from 'assets/aegaeon.jpg';
 
+import '../styles.css';
+
 const Aegaeon = () => (
   <div>
-    <img src={aegaeon} />
+    <img src={aegaeon} styleName="content-image" />
 
     <p>Aegaeon, the bodyguard of kings. He’s a Water TNK blade and he uses a chrome katana in battle. He is originally the Emperor’s blade, but for plot reasons, becomes entrusted to us. He’s Kozaki’s second and last blade design, and does anyone else notice any similarities to his Awakening work?. His name may also be a reference to greek mythology; Aegaeon is one of the Hecantioniers, or he may be a reference to the Aegean Sea since he’s a water blade. Anyways, he’s pretty cool and it’s hinted that he and Brighid have something going on. Other than Brighid, his favorites are Fondant Rice Cake and Montecoran Doll, and he likes desserts and art.</p>
 

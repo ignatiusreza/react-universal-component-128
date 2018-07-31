@@ -2,9 +2,11 @@ import React from 'react';
 
 import dagas from 'assets/dagas.jpg';
 
+import '../styles.css';
+
 const Dagas = () => (
   <div>
-    <img src={dagas} />
+    <img src={dagas} styleName="content-image" />
 
     <p>Dagas, the Kaiser of all Blades, or so he says. He is a Fire ATK blade and uses a greataxe in battle. He’s a self-proclaimed king, and firmly believes it. My personal headcanon is that he was once a greedy king and human, but was cursed to serve as a blade for eternity due to his vice of pride. His memory of being king sticks with him to torment him. Maybe his kingdom was one the ones that Mythra had allegedly sank to the Cloud Sea? Enough with theories for now, he was drawn by hakus, who also designed Azami. Other than being a Kaiser, his favorite things are Aromalocaris Saute and Black Flower Field, and he enjoys seafood and art from time to time.</p>
 

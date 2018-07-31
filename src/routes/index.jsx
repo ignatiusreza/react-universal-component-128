@@ -5,9 +5,11 @@ import Aegaeon from './aegaeon';
 import Adenine from './adenine';
 import Dagas from './dagas';
 
+import './styles.css';
+
 const Root = ({ match }) => (
-  <div>
-    <ul>
+  <div styleName="container">
+    <ul styleName="menu">
       <li><NavLink to={`${match.path}/aegaeon`}>Aegaeon</NavLink></li>
       <li><NavLink to={`${match.path}/adenine`}>Adenine</NavLink></li>
       <li><NavLink to={`${match.path}/dagas`}>Dagas</NavLink></li>

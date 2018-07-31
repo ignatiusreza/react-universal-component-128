@@ -2,9 +2,11 @@ import React from 'react';
 
 import adenine from 'assets/adenine.jpg';
 
+import '../styles.css';
+
 const Adenine = () => (
   <div>
-    <img src={adenine} />
+    <img src={adenine} styleName="content-image" />
 
     <p>Adenine, the intellectual. She’s a Wind HLR blade and she uses her knuckles in battle. She has a cool belt and paper effect with her design. I love how she looks like she’s constantly floating as well. Her name refers to some sort of biochemistry regarding DNA, but I ain’t a science major so the words to explain it are going over my head. Anyways, she loves veggies and literature, with her favorites being Torigoth Marinade and Leftherian Life.</p>
 
