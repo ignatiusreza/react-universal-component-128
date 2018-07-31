@@ -1,0 +1,51 @@
+:root {
+  /* Typography */
+  --base-font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Ubuntu",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  /* Font Weights */
+  --font-weight-thin: 100;
+  --font-weight-light: 300;
+  --font-weight-medium: 500;
+
+  /* Font Sizes */
+  --base-font-size: 1.6rem;
+  --base-font-weight: var(--font-weight-light);
+
+  /* Line Heights */
+  --base-line-height: 26px;
+  --heading-line-height: 1.65;
+
+  /* Spacing */
+  --base-spacing: 3rem;
+  --half-spacing: calc(var(--base-spacing) / 2);
+
+  /* Colors */
+  --black: #242933;
+  --dark-gray: #737780;
+  --light-gray: #dadee5;
+  --orange: #ff5a00;
+  --red: #f00;
+  --green: #26ce22;
+  --blue: #09f;
+  --white: #fff;
+
+  /* Font Colors */
+  --base-font-color: var(--dark-gray);
+  --heading-font-color: var(--black);
+  --special-color: var(--orange);
+  --action-color: var(--blue);
+  --error-color: var(--red);
+
+  /* Background Colors */
+  --base-background-color: var(--white);
+  --secondary-background-color: color(var(--light-gray) tint(75%));
+  --disabled-background-color: color(var(--base-background-color) shade(15%));
+}

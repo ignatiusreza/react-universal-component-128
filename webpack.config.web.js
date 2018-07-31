@@ -5,6 +5,7 @@ const config = require('./webpack.config.base');
 
 const polyfill = [
   'babel-polyfill', 'core-js', 'regenerator-runtime',
+  'raf/polyfill',
 ];
 const polyfillRegExp = new RegExp(`/node_modules/(${polyfill.join('|')})`);
 

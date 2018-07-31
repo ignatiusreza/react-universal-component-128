@@ -1,4 +1,5 @@
 const path = require('path');
+const CSSExtractPlugin = require('extract-css-chunks-webpack-plugin');
 const _ = require('lodash');
 
 const AssetsPlugin = require('assets-webpack-plugin');
@@ -16,6 +17,10 @@ require('./webpack.loaders')(config);
 
 const plugins = [
   new AssetsPlugin({ path: config.output.path }),
+  new CSSExtractPlugin({
+    filename: '[name]-[contenthash].css',
+    chunkFilename: '[name]-[contenthash].css',
+  }),
 ];
 plugins.forEach(plugin => config.plugins.push(plugin));
 

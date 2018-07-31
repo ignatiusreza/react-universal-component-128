@@ -1,0 +1,48 @@
+@import "stylesheets/variables";
+
+.container {
+  max-width: 1024px;
+  margin: 7rem auto 0;
+}
+
+.menu {
+  background: var(--action-color);
+  text-align: center;
+  padding: 1rem 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+
+  & li {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+
+      &:after {
+        content: '|';
+        color: var(--base-background-color);
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  & a {
+    color: var(--base-background-color);
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: var(--base-background-color);
+      text-decoration: underline;
+    }
+  }
+}
+
+.content-image {
+  width: 20rem;
+  max-width: 25%;
+  float: right;
+  margin: 0.5rem 0 1rem 1rem;
+}
