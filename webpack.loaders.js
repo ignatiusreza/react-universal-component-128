@@ -43,6 +43,7 @@ const jsxLoader = ({ context }) => {
       plugins: [
         ['react-css-modules', { context, generateScopedName: cssClassName }],
         'react-hot-loader/babel',
+        'syntax-dynamic-import',
         'transform-object-rest-spread',
       ],
     },
